@@ -2,12 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import heroImg from "@/assets/hero.jpg";
-import heroPortrait from "@/assets/hero-portrait.jpg";
-import aboutImg from "@/assets/about.jpg";
+import jkrLogo from "@/assets/jkr-logo.png";
+import aboutImg from "@/assets/about-img.png";
 import missionImg from "@/assets/mission.jpg";
-import training1 from "@/assets/training-1.jpg";
-import training2 from "@/assets/training-2.jpg";
-import training3 from "@/assets/training-3.jpg";
+import t1 from "@/assets/tarining-1.jpg";
+import t2 from "@/assets/tarining-2.jpg";
+import t3 from "@/assets/tarining-3.jpg";
+import t4 from "@/assets/tarining-4.jpg";
+import t5 from "@/assets/tarining-5.jpg";
+import t6 from "@/assets/tarining-6.jpg";
+import t7 from "@/assets/tarining-7.jpg";
+import t8 from "@/assets/tarining-8.jpg";
+import t9 from "@/assets/tarining-9.jpg";
 import { Logo } from "@/components/Logo";
 
 
@@ -23,7 +29,7 @@ const NAV = [
   { label: "Expertise", href: "#expertise" },
   { label: "Programs", href: "#programs" },
   { label: "Clients", href: "#clients" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "https://wa.me/917907035081" },
 ];
 
 const STATS = [
@@ -102,8 +108,8 @@ const WHY = [
 ];
 
 /* Session photos for the auto-scroll strip */
-const SESSION_PHOTOS_ROW1 = [training1, training2, training3, heroImg, missionImg, aboutImg];
-const SESSION_PHOTOS_ROW2 = [missionImg, training3, aboutImg, training1, heroImg, training2];
+const SESSION_PHOTOS_ROW1 = [t1, t2, t3, t4, t5];
+const SESSION_PHOTOS_ROW2 = [t6, t7, t8, t9, t2];
 
 
 /* ─── REVEAL ─── */
@@ -199,7 +205,9 @@ function Index() {
           </ul>
           <div className="flex items-center gap-4">
             <a
-              href="#contact"
+              href="https://wa.me/917907035081"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-cta group relative hidden items-center gap-2 rounded-full glass-cta px-5 py-2.5 transition-all duration-300 hover:opacity-85 sm:inline-flex"
             >
               Book a Session
@@ -252,7 +260,9 @@ function Index() {
           </ul>
           <div className="mt-auto pt-8">
             <a
-              href="#contact"
+              href="https://wa.me/917907035081"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="text-cta group flex w-full items-center justify-center gap-3 rounded-full glass-cta px-7 py-4 transition-all hover:opacity-85"
             >
@@ -310,7 +320,9 @@ function Index() {
             <Reveal delay={0.25}>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
+                  href="https://wa.me/917907035081"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-cta group inline-flex items-center gap-3 rounded-full glass-cta px-7 py-4 transition-all duration-300 hover:opacity-85"
                 >
                   Book a Training Session
@@ -332,16 +344,16 @@ function Index() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/[0.06] will-change-transform"
+              className="group relative aspect-[3/4] w-full overflow-hidden will-change-transform"
             >
               <img
-                src={heroPortrait}
-                alt="Portrait of Aflah C P"
+                src={jkrLogo}
+                alt="JKR Logo"
                 width={1200}
                 height={1400}
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-contain object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/50 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
             </motion.div>
 
             <motion.div
@@ -600,7 +612,7 @@ function Index() {
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/[0.06] md:aspect-[5/6]"
               >
                 <img
-                  src={training1}
+                  src={t1}
                   alt="Sales framework training session"
                   width={1408}
                   height={1008}
@@ -630,7 +642,7 @@ function Index() {
                   className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.06]"
                 >
                   <img
-                    src={training2}
+                    src={t2}
                     alt="Small group business mentoring"
                     width={1008}
                     height={1200}
@@ -656,7 +668,7 @@ function Index() {
                   className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.06]"
                 >
                   <img
-                    src={training3}
+                    src={t3}
                     alt="Audience during keynote session"
                     width={1408}
                     height={1008}
