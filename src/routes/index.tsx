@@ -10,10 +10,13 @@ import t2 from "@/assets/tarining-2.jpg";
 import t3 from "@/assets/tarining-3.jpg";
 import t4 from "@/assets/tarining-4.jpg";
 import t5 from "@/assets/tarining-5.jpg";
-import t6 from "@/assets/tarining-6.jpg";
-import t7 from "@/assets/tarining-7.jpg";
-import t8 from "@/assets/tarining-8.jpg";
-import t9 from "@/assets/tarining-9.jpg";
+
+
+
+
+
+
+
 import { Logo } from "@/components/Logo";
 
 
@@ -107,9 +110,9 @@ const WHY = [
   "Continuous post-training support",
 ];
 
-/* Session photos for the auto-scroll strip */
-const SESSION_PHOTOS_ROW1 = [t1, t2, t3, t4, t5];
-const SESSION_PHOTOS_ROW2 = [t6, t7, t8, t9, t2];
+
+
+
 
 
 /* ─── REVEAL ─── */
@@ -387,56 +390,56 @@ function Index() {
       </section>
 
 
-      {/* ━━ SESSION PHOTOS — Auto-scrolling strip ━━ */}
-      <section className="relative overflow-hidden py-6 md:py-10">
-        <div className="divider mb-6 md:mb-10" />
 
-        {/* Row 1 — scrolls left */}
-        <div className="flex whitespace-nowrap marquee-photos mb-4 md:mb-6">
-          {[0, 1].map((dup) => (
-            <div key={dup} className="flex shrink-0 gap-4 pr-4 md:gap-6 md:pr-6">
-              {SESSION_PHOTOS_ROW1.map((src, i) => (
-                <div
-                  key={`r1-${dup}-${i}`}
-                  className="relative h-[200px] w-[300px] flex-shrink-0 overflow-hidden rounded-xl border border-white/[0.06] md:h-[280px] md:w-[420px]"
-                >
-                  <img
-                    src={src}
-                    alt={`Training session ${i + 1}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/30 to-transparent" />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
 
-        {/* Row 2 — scrolls right (reverse) */}
-        <div className="flex whitespace-nowrap marquee-photos-reverse">
-          {[0, 1].map((dup) => (
-            <div key={dup} className="flex shrink-0 gap-4 pr-4 md:gap-6 md:pr-6">
-              {SESSION_PHOTOS_ROW2.map((src, i) => (
-                <div
-                  key={`r2-${dup}-${i}`}
-                  className="relative h-[200px] w-[300px] flex-shrink-0 overflow-hidden rounded-xl border border-white/[0.06] md:h-[280px] md:w-[420px]"
-                >
-                  <img
-                    src={src}
-                    alt={`Training session ${i + 1}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/30 to-transparent" />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
 
-        <div className="divider mt-6 md:mt-10" />
-      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       {/* ━━ ABOUT ━━ */}
@@ -582,111 +585,167 @@ function Index() {
       </section>
 
 
-      {/* ━━ IN ACTION — Gallery ━━ */}
-      <section className="relative overflow-hidden py-32 md:py-40">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* ━━ IN ACTION — Gallery (Small) ━━ */}
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <Reveal>
-                <p className="text-eyebrow mb-6">In the Room</p>
+                <p className="text-eyebrow mb-4">In the Room</p>
               </Reveal>
               <Reveal delay={0.05}>
-                <h2 className="text-display max-w-2xl text-5xl md:text-6xl lg:text-7xl">
+                <h2 className="text-display max-w-2xl text-4xl md:text-5xl">
                   Where the <span className="italic">work</span> happens.
                 </h2>
               </Reveal>
             </div>
             <Reveal delay={0.1}>
-              <p className="max-w-sm text-sm text-muted-foreground md:text-base">
-                Boardrooms, stages, small teams, big audiences — every session is designed
-                for the room it's in.
+              <p className="max-w-sm text-sm text-muted-foreground">
+                Boardrooms, stages, small teams, big audiences.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
-            <Reveal delay={0.05} className="md:col-span-7">
-              <motion.div
-                whileHover={{ scale: 1.008 }}
-                transition={{ duration: 0.5 }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/[0.06] md:aspect-[5/6]"
-              >
-                <img
-                  src={t1}
-                  alt="Sales framework training session"
-                  width={1408}
-                  height={1008}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-[#0a0a0a]/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.05] px-3 py-1 font-mono text-[10px] tracking-[0.3em] text-foreground/70">
-                    <span className="h-1 w-1 rounded-full bg-foreground/50" />01 · WORKSHOP
-                  </span>
-                  <h3 className="text-display mt-3 text-3xl md:text-5xl">
-                    Sales Framework Deep-Dive
-                  </h3>
-                  <p className="mt-3 max-w-md text-sm text-muted-foreground">
-                    Executive team, closed-door strategy session.
-                  </p>
-                </div>
-              </motion.div>
-            </Reveal>
-
-            <div className="grid grid-cols-1 gap-4 md:col-span-5 md:gap-5">
-              <Reveal delay={0.1}>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+            {[
+              { img: t1, num: "01", type: "WORKSHOP", title: "Sales Framework" },
+              { img: t2, num: "02", type: "MENTORING", title: "Business Growth" },
+              { img: t3, num: "03", type: "KEYNOTE", title: "Sales Psychology" },
+            ].map((item, i) => (
+              <Reveal key={item.num} delay={0.05 + i * 0.05}>
                 <motion.div
-                  whileHover={{ scale: 1.008 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.06]"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/[0.06]"
                 >
                   <img
-                    src={t2}
-                    alt="Small group business mentoring"
-                    width={1008}
-                    height={1200}
+                    src={item.img}
+                    alt={item.title}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-[#0a0a0a]/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.05] px-3 py-1 font-mono text-[10px] tracking-[0.3em] text-foreground/70">
-                      <span className="h-1 w-1 rounded-full bg-foreground/50" />02 · MENTORING
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-5">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.1] bg-white/[0.05] px-2.5 py-1 font-mono text-[9px] tracking-[0.2em] text-foreground/70">
+                      <span className="h-1 w-1 rounded-full bg-foreground/50" />{item.num} · {item.type}
                     </span>
-                    <h3 className="text-display mt-2 text-2xl md:text-3xl">
-                      Business Growth Roundtable
+                    <h3 className="text-display mt-2 text-xl md:text-2xl">
+                      {item.title}
                     </h3>
                   </div>
                 </motion.div>
               </Reveal>
-
-              <Reveal delay={0.15}>
-                <motion.div
-                  whileHover={{ scale: 1.008 }}
-                  transition={{ duration: 0.5 }}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.06]"
-                >
-                  <img
-                    src={t3}
-                    alt="Audience during keynote session"
-                    width={1408}
-                    height={1008}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-[#0a0a0a]/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.05] px-3 py-1 font-mono text-[10px] tracking-[0.3em] text-foreground/70">
-                      <span className="h-1 w-1 rounded-full bg-foreground/50" />03 · KEYNOTE
-                    </span>
-                    <h3 className="text-display mt-2 text-2xl md:text-3xl">
-                      Sales Psychology Keynote
-                    </h3>
-                  </div>
-                </motion.div>
-              </Reveal>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -705,6 +764,11 @@ function Index() {
               <p className="mt-8 max-w-xl text-lg text-muted-foreground">
                 Most organizations don't lose revenue because of bad products. They lose it because of:
               </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="mt-12 max-w-lg overflow-hidden rounded-2xl border border-white/[0.06] opacity-80">
+                <img src={t5} alt="Strategy Session" className="aspect-[16/9] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
+              </div>
             </Reveal>
           </div>
           <div className="lg:col-span-5">
@@ -758,8 +822,8 @@ function Index() {
 
       {/* ━━ PROGRAMS ━━ */}
       <section id="programs" className="mx-auto max-w-[1400px] px-6 py-32 md:px-10 md:py-40">
-        <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+        <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-6">
             <Reveal>
               <p className="text-eyebrow mb-6">Programs</p>
             </Reveal>
@@ -769,7 +833,27 @@ function Index() {
               </h2>
             </Reveal>
           </div>
+          <div className="lg:col-span-6 hidden lg:block">
+            <Reveal delay={0.1}>
+              <div className="relative h-[240px] w-full overflow-hidden rounded-2xl border border-white/[0.06] opacity-80">
+                <img src={t4} alt="Corporate Training Session" className="h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
+              </div>
+            </Reveal>
+          </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {PROGRAMS.map((p, i) => (
             <Reveal key={p} delay={i * 0.025} y={8}>
