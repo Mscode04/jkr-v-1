@@ -8,8 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    // Vercel hosts at the root path (/) by default.
-    base: process.env.VERCEL ? "/" : "/jkr-web/",
+    base: "/",
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).

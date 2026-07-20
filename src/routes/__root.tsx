@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SmoothScroll } from "../components/SmoothScroll";
 import { ScrollProgress } from "../components/ScrollProgress";
 
@@ -39,9 +38,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -79,25 +75,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aflah C P — Sales Strategist & Corporate Trainer" },
+      { title: "Aflah C P | thejkr.com — Sales Strategist & Corporate Trainer" },
       {
         name: "description",
         content:
-          "Aflah C P: sales strategist, corporate trainer & business mentor. 7+ years turning sales psychology into systems that produce measurable results.",
+          "Aflah C P: sales strategist, corporate trainer & business mentor at thejkr.com. 7+ years turning sales psychology into systems that produce measurable results.",
       },
       { name: "author", content: "Aflah C P" },
-      { property: "og:title", content: "Aflah C P — Sales Strategist & Corporate Trainer" },
+      { property: "og:title", content: "Aflah C P | thejkr.com" },
       {
         property: "og:description",
         content:
-          "Sales psychology, leadership development & business growth training. 1000+ professionals trained across 25+ businesses.",
+          "Sales psychology, leadership development & business growth training. 1000+ professionals trained across industries.",
       },
+      { property: "og:url", content: "https://thejkr.com" },
+      { property: "og:site_name", content: "thejkr.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/jkr-favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

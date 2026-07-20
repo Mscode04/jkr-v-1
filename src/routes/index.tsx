@@ -10,6 +10,8 @@ import t2 from "@/assets/tarining-2.jpg";
 import t3 from "@/assets/tarining-3.jpg";
 import t4 from "@/assets/tarining-4.jpg";
 import t5 from "@/assets/tarining-5.jpg";
+import new1 from "@/assets/new-1.png";
+import new2 from "@/assets/new-2.png";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
@@ -40,8 +42,7 @@ const NAV = [
 const STATS = [
   { n: "1000+", l: "Professionals Trained" },
   { n: "7+", l: "Years of Experience" },
-  { n: "25", l: "Businesses Served" },
-  { n: "10+", l: "Industries Covered" },
+  { n: "30+", l: "Industries Covered" },
 ];
 
 const EXPERTISE = [
@@ -517,10 +518,10 @@ function Index() {
 
       {/* ━━ STATS ━━ */}
       <section className="border-b border-white/[0.06]">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 md:grid-cols-4">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-3">
           {STATS.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.05} y={14}>
-              <div className={`p-8 text-center md:p-12 ${i < 3 ? "border-r border-white/[0.06]" : ""}`}>
+              <div className={`p-8 text-center md:p-12 ${i < 2 ? "border-b md:border-b-0 md:border-r border-white/[0.06]" : ""}`}>
                 <div className="text-display text-5xl text-foreground md:text-6xl">{s.n}</div>
                 <div className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">{s.l}</div>
               </div>
@@ -700,7 +701,7 @@ function Index() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
             {[
               { img: t1, num: "01", type: "WORKSHOP", title: "Sales Framework" },
-              { img: t2, num: "02", type: "MENTORING", title: "Business Growth" },
+              { img: new1, num: "02", type: "MENTORING", title: "Business Growth" },
               { img: t3, num: "03", type: "KEYNOTE", title: "Sales Psychology" },
             ].map((item, i) => (
               <Reveal key={item.num} delay={0.05 + i * 0.05}>
@@ -748,7 +749,7 @@ function Index() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-12 max-w-lg overflow-hidden rounded-2xl border border-white/[0.06] opacity-80">
-                <img src={t5} alt="Strategy Session" loading="lazy" className="aspect-[16/9] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
+                <img src={new2} alt="Strategy Session" loading="lazy" className="aspect-[16/9] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
               </div>
             </Reveal>
           </div>
@@ -892,7 +893,7 @@ function Index() {
             <div className="lg:col-span-6 lg:col-start-7 lg:pt-8">
               <Reveal delay={0.1}>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  From hospitals to eyewear giants, aviation to architecture — teams across {CLIENTS.length}+ organizations have trusted the process.
+                 Trusted by major groups, including hospitals, eyewear leaders, airlines, and architects, our proven process delivers results.
                 </p>
               </Reveal>
             </div>
@@ -1033,6 +1034,9 @@ function Index() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="mailto:aflah.jkr@gmail.com" className="transition-colors duration-300 hover:text-foreground">aflah.jkr@gmail.com</a>
+                </li>
+                <li>
+                  <a href="mailto:aflah.perpex@gmail.com" className="transition-colors duration-300 hover:text-foreground">aflah.perpex@gmail.com</a>
                 </li>
                 <li>India</li>
               </ul>
