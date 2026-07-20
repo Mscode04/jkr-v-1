@@ -14,13 +14,6 @@ import new1 from "@/assets/new-1.png";
 import new2 from "@/assets/new-2.png";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-
-
-
-
-
-
-
 import { Logo } from "@/components/Logo";
 
 
