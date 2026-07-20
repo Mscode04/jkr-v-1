@@ -40,7 +40,7 @@ const NAV = [
 const STATS = [
   { n: "1000+", l: "Professionals Trained" },
   { n: "7+", l: "Years of Experience" },
-  { n: "25+", l: "Businesses Served" },
+  { n: "25", l: "Businesses Served" },
   { n: "10+", l: "Industries Covered" },
 ];
 
@@ -563,32 +563,7 @@ function Index() {
       </section>
 
 
-      {/* ━━ CERTIFICATIONS ━━ */}
-      <section className="border-y border-white/[0.06] py-24 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <Reveal>
-            <p className="text-eyebrow mb-6">Credentials</p>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-display max-w-3xl text-4xl md:text-5xl lg:text-6xl">
-              Certified. Mentored. <span className="italic">Always learning.</span>
-            </h2>
-          </Reveal>
-          <div className="mt-16 space-y-3">
-            {CERTS.map((c, i) => (
-              <Reveal key={c.t} delay={i * 0.05} y={10}>
-                <div className="flex flex-col gap-2 rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04] md:flex-row md:items-center md:justify-between md:p-8">
-                  <div className="flex items-baseline gap-6">
-                    <span className="font-mono text-xs text-muted-foreground">0{i + 1}</span>
-                    <span className="text-display text-2xl md:text-3xl">{c.t}</span>
-                  </div>
-                  <span className="pl-12 text-sm text-muted-foreground md:pl-0 md:text-right">{c.by}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
 
 
@@ -1025,7 +1000,7 @@ function Index() {
           <Reveal delay={0.15}>
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <a
-                href="mailto:hello@aflahcp.com"
+                href="mailto:aflah.jkr@gmail.com"
                 className="text-cta group inline-flex items-center gap-3 rounded-full glass-cta px-8 py-5 transition-all duration-300 hover:opacity-85"
               >
                 Book a Consultation
@@ -1057,7 +1032,7 @@ function Index() {
               <p className="text-eyebrow mb-4">Contact</p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="mailto:hello@aflahcp.com" className="transition-colors duration-300 hover:text-foreground">hello@aflahcp.com</a>
+                  <a href="mailto:aflah.jkr@gmail.com" className="transition-colors duration-300 hover:text-foreground">aflah.jkr@gmail.com</a>
                 </li>
                 <li>India</li>
               </ul>
@@ -1066,8 +1041,8 @@ function Index() {
               <p className="text-eyebrow mb-4">Follow</p>
               <ul className="flex flex-wrap gap-4 text-sm">
                 {[
-                  { name: "Instagram", url: "#" },
-                  { name: "LinkedIn", url: "#" },
+                  { name: "Instagram", url: "https://www.instagram.com/afiknows/" },
+                  { name: "LinkedIn", url: "https://www.linkedin.com/in/aflah-c-p-5b0150387/" },
                   { name: "WhatsApp", url: "#" },
                 ].map((s) => (
                   <li key={s.name}>
