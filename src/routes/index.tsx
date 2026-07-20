@@ -10,6 +10,8 @@ import t2 from "@/assets/tarining-2.jpg";
 import t3 from "@/assets/tarining-3.jpg";
 import t4 from "@/assets/tarining-4.jpg";
 import t5 from "@/assets/tarining-5.jpg";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 
 
 
@@ -94,10 +96,10 @@ const INDUSTRIES = [
 const CLIENTS = [
   "Havells", "DOPA", "Zahra Tours & Travels", "VTrust Eye Hospital", "iTees Eye Hospital",
   "Standard", "Chanakya", "ASH Academy", "Cloud Hub", "Adrex Media School",
-  "Met-Leaf", "SCM Hub", "Aerowis Aviation", "Persian Pastries", "RAC",
+  "Met-Leaf", 
   "De Beacon", "Peak Escape", "Covo Architecture", "iQCTS Academy", "Timson",
-  "Berry & Co.", "Eduslot", "Insite Constructions", "Spaces Eco Clean", "New10's",
-  "Hiline", "Sunnyday Solar",
+  "Berry & Co.", "Eduslot", "Spaces Eco Clean", 
+  "Hiline",
 ];
 
 const WHY = [
@@ -149,6 +151,10 @@ function Index() {
   const reduce = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
+    AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1.5 })
+  ]);
 
   useEffect(() => {
     let ticking = false;
@@ -300,7 +306,7 @@ function Index() {
             <Reveal delay={0.05}>
               <h1
                 aria-label="Aflah C P"
-                className="text-display pointer-events-none select-none whitespace-nowrap text-[22vw] leading-[0.82] tracking-[-0.05em] text-foreground lg:text-[13vw]"
+                className="text-display pointer-events-none select-none whitespace-nowrap text-[15vw] leading-[0.82] tracking-[-0.05em] text-foreground lg:text-[13vw]"
               >
                 AFLAH<span className="text-foreground/30">.</span>
               </h1>
@@ -767,7 +773,7 @@ function Index() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-12 max-w-lg overflow-hidden rounded-2xl border border-white/[0.06] opacity-80">
-                <img src={t5} alt="Strategy Session" className="aspect-[16/9] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
+                <img src={t5} alt="Strategy Session" loading="lazy" className="aspect-[16/9] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
               </div>
             </Reveal>
           </div>
@@ -836,7 +842,7 @@ function Index() {
           <div className="lg:col-span-6 hidden lg:block">
             <Reveal delay={0.1}>
               <div className="relative h-[240px] w-full overflow-hidden rounded-2xl border border-white/[0.06] opacity-80">
-                <img src={t4} alt="Corporate Training Session" className="h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
+                <img src={t4} alt="Corporate Training Session" loading="lazy" className="h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105" />
               </div>
             </Reveal>
           </div>
@@ -916,14 +922,22 @@ function Index() {
               </Reveal>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-px rounded-2xl overflow-hidden sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {CLIENTS.map((c, i) => (
-              <Reveal key={c} delay={i * 0.012} y={5}>
-                <div className="group relative flex h-24 items-center justify-center border border-white/[0.04] bg-white/[0.02] px-4 text-center transition-all duration-300 hover:bg-white/[0.06] md:h-28">
-                  <span className="text-display text-base text-foreground/70 transition-colors duration-300 group-hover:text-foreground md:text-lg">{c}</span>
-                </div>
-              </Reveal>
-            ))}
+          <div className="relative overflow-hidden rounded-2xl border border-white/[0.04] bg-white/[0.01] py-5" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+            <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+              <div className="flex touch-pan-y">
+                {Array.from({ length: 27 }).map((_, i) => (
+                  <div key={`client-${i}`} className="flex shrink-0 basis-[170px] md:basis-[220px] h-24 items-center justify-center p-3 rounded-xl transition-all duration-500 hover:scale-105 ml-8 mr-4 select-none">
+                    <img 
+                      src={`${import.meta.env.BASE_URL}clients/${i + 1}.png`} 
+                      alt={`Client ${i + 1}`} 
+                      loading="lazy" 
+                      draggable="false"
+                      className="max-h-full max-w-full object-contain transition-opacity duration-500" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
