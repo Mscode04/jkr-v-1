@@ -280,7 +280,7 @@ function Index() {
       {/* ━━ HERO ━━ */}
       <section ref={heroRef} id="top" className="relative min-h-screen overflow-hidden pt-24">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <img src={heroImg} alt="" aria-hidden className="h-full w-full object-cover object-center opacity-15" />
+          <img src={aboutImg} alt="" aria-hidden className="h-full w-full object-cover object-center opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]" />
         </div>
 
